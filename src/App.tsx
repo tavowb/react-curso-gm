@@ -1,31 +1,29 @@
 import "./App.css";
-import { useFetch } from "./hooks";
-const url = "https://jsonplaceholder.typicode.com/posts";
-//User ejemplo
-//const user = "https://jsonplaceholder.typicode.com/user";
-interface Data {
-  name: string;
-  lastname: string;
-  age: number;
-}
+import { AppForm, Button, ColorRed } from "./components";
 
 function App() {
-  const { data, loading, error } = useFetch<Data>(url);
-  //const { data: userData, loading: userLoading, error: userError } = useFetch<Data>(user); ejemplo del alias
+  const handleClick = () => {
+    console.log("uy me clickio todo");
+  };
 
-  // useFetch es un hook personalizado que maneja la logica de la peticion
-  // y devuelve los datos, el estado de carga y los errores
-  // data es el resultado de la peticion, loading es un booleano que indica si
-  // la peticion esta en curso y error es un objeto que contiene el error si lo hay
-  if (loading) {
-    return <div>Cargando...</div>;
-  }
-  if (error) {
-    return <div>Ups! Hay un error: {error.message}</div>;
-  }
+  const submit = () => {
+    console.log("submitted");
+  };
+
+  const dimeHola = () => {
+    alert("hola !!");
+  };
+
   return (
     <>
-      <div> {JSON.stringify(data)} </div>
+      <ColorRed>
+        <Button parentMethod={dimeHola}>My Boton Rojo</Button>
+      </ColorRed>
+      <Button parentMethod={handleClick}> My Boton Normal</Button>
+
+      <AppForm>
+        <button type="submit" onClick={submit}></button>
+      </AppForm>
     </>
   );
 }
