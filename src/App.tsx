@@ -1,12 +1,13 @@
 import "./App.css";
-import { ShoppingCart } from "./components";
+import { PhoneBook } from "./components";
 
 function App() {
   return (
     <>
       {/*<BookReader />*/}
       {/*<FocusInput />*/}
-      <ShoppingCart />
+      {/*<ShoppingCart />*/}
+      <PhoneBook />
     </>
   );
 }
