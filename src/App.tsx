@@ -1,13 +1,21 @@
 import "./App.css";
-import { PhoneBook } from "./components";
+import { Modal } from "./components";
+import { useModalContext } from "./components/Modal/context/";
 
 function App() {
+  const { setState } = useModalContext();
+
+  const openModal = () => {
+    setState(true);
+  };
+
   return (
     <>
-      {/*<BookReader />*/}
-      {/*<FocusInput />*/}
-      {/*<ShoppingCart />*/}
-      <PhoneBook />
+      <Modal>
+        <h1>Hola Mimi</h1>
+        <h3>Te quiero</h3>
+      </Modal>
+      <button onClick={openModal}>Abrete sesamo</button>
     </>
   );
 }
