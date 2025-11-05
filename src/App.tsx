@@ -1,10 +1,14 @@
+import type { ReactNode } from "react";
 import "./App.css";
-import { PromiseError } from "./components/ErrorBoundayExamples";
-
-function App() {
+interface Props {
+  children: ReactNode;
+}
+function App({ children }: Props) {
   return (
     <>
-      <PromiseError />
+      <p>Navbar</p>
+      {children}
+      <p>Footer</p>
     </>
   );
 }
